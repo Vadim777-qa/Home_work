@@ -15,7 +15,6 @@ print("There is an 'o' character in your word(s) ")
 # Данні в лісті можуть бути будь якими
 
 lst1 = ['1', '2', 3, True, 'False', 5, '6', 7, 8, 'Python', 9, 0, 'Lorem Ipsum']
-a = ['# this is a comment', 1, '# another comment', 2]
 lst2 = [x for x in lst1 if type(x) == str]
 print(lst2)
 
