@@ -2,13 +2,13 @@
 # в якому є буква "о" (враховуються як великі так і маленькі).
 # Цикл не повинен завершитися, якщо користувач ввів слово без букви "о".
 
-# input_string = ''
-# while 1:
-#     your_word = input("Type your word: ")
-#     if "o" in your_word:
-#         break
-#     input_string += your_word
-# print("There is an 'o' character in your word(s) ")
+input_string = ''
+while 1:
+    your_word = input("Type your word: ")
+    if "o" in your_word:
+        break
+    input_string += your_word
+print("There is an 'o' character in your word(s) ")
 
 # 2. Є list з даними lst1 = ['1', '2', 3, True, 'False', 5, '6', 7, 8, 'Python', 9, 0, 'Lorem Ipsum'].
 # Напишіть код, який свормує новий list (наприклад lst2), який містить лише змінні типу стрінг, які присутні в lst1.
