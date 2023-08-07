@@ -9,9 +9,10 @@ def conditions_for_arguments(one_argument, two_argument):
     elif type(one_argument) == str and type(two_argument) == str:
         return one_argument + " " + two_argument
     else:
-        test_tuple = (one_argument, two_argument)
-        return test_tuple
+        return one_argument, two_argument
 
 
-operations_arguments = conditions_for_arguments(3, 2)
-print(operations_arguments)
+if __name__ == '__main__':
+    operations_arguments = conditions_for_arguments(3, 3)
+    print(operations_arguments)
+    print("Internal module")
