@@ -4,6 +4,8 @@ import requests
 
 
 class TestRegistration:
+    email = "holarider@hdjs.com"
+    password = "somePs45"
 
     def setup_class(self):
         self.driver = webdriver.Chrome()
@@ -24,9 +26,9 @@ class TestRegistration:
         #######
         name_field.send_keys("James")
         last_name_field.send_keys("Bond")
-        email_field.send_keys("holawider@hdjs.com")
-        password_field.send_keys("somePs45")
-        repeat_password_field.send_keys("somePs45")
+        email_field.send_keys(self.email)
+        password_field.send_keys(self.password)
+        repeat_password_field.send_keys(self.password)
         confirm_sign_up_button.click()
 
     def test_successful_message(self):
@@ -38,13 +40,14 @@ class TestRegistration:
         assert actual_message == expected_message
 
     def teardown_class(self):
-        user_credentials = [
-            ("holawider@hdjs.com", "somePs45", False)
-        ]
+        sign_in_dict = {
+            "email": self.email,
+            "password": self.password,
+            "rememberMe": False
+        }
 
         login_url = "https://qauto2.forstudy.space/api/auth/signin"
-        self.session.post(url=login_url, json=user_credentials)
-        self.driver.implicitly_wait(2)
+        self.session.post(url=login_url, json=sign_in_dict)
 
         delete_url = "https://qauto2.forstudy.space/api/users"
         self.session.delete(url=delete_url)
@@ -53,43 +56,3 @@ class TestRegistration:
 
 
 a = 0
-
-# def find_element(self, by, value):
-#     return self.driver.find_element(by, value)
-#
-# def click_element(self, element):
-#     element.click()
-#
-# def send_keys_to_element(self, element, text):
-#     element.send_keys(text)
-
-# signup_button = driver.find_element(By.XPATH, "//button[text() ='Sign up']")
-# signup_button.click()
-# name_field = driver.find_element(By.ID, "signupName")
-# name_field.send_keys("Roger")
-# last_name_field = driver.find_element(By.ID, "signupLastName")
-# last_name_field.send_keys("Winston")
-# email_field = driver.find_element(By.ID, "signupEmail")
-# email_field.send_keys("roger@hdjs.com")
-# password_field = driver.find_element(By.ID, "signupPassword")
-# password_field.send_keys("somePass55")
-# repeat_password_field = driver.find_element(By.ID, "signupRepeatPassword")
-# repeat_password_field.send_keys("somePass55")
-# confirm_sign_up_button = driver.find_element(By.XPATH, "//button[text() = 'Register']")
-# confirm_sign_up_button.click()
-# driver = webdriver.Chrome()
-# driver.get("https://guest:welcome2qauto@qauto2.forstudy.space/")
-# signup_button = driver.find_element(By.XPATH, "//button[text() ='Sign up']")
-# signup_button.click()
-# name_field = driver.find_element(By.ID, "signupName")
-# name_field.send_keys("Roger")
-# last_name_field = driver.find_element(By.ID, "signupLastName")
-# last_name_field.send_keys("Winston")
-# email_field = driver.find_element(By.ID, "signupEmail")
-# email_field.send_keys("roger@hdjs.com")
-# password_field = driver.find_element(By.ID, "signupPassword")
-# password_field.send_keys("somePass55")
-# repeat_password_field = driver.find_element(By.ID, "signupRepeatPassword")
-# repeat_password_field.send_keys("somePass55")
-# confirm_sign_up_button = driver.find_element(By.XPATH, "//button[text() = 'Register']")
-# confirm_sign_up_button.click()
