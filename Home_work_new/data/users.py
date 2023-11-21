@@ -4,7 +4,7 @@ import os
 
 logger = logging.getLogger()
 
-RegistrationTestsDataPath = "../data"  # Should be in a separate module or in __init__.py
+RegistrationTestsDataPath = "..\\data"  # Should be in a separate module or in __init__.py
 
 # Different User models could be created for the different test modules
 # Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter

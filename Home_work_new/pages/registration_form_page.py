@@ -1,5 +1,6 @@
-from pages import By
+from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
+
 
 class RegistrationFormPage(BasePage):
     def __init__(self, driver):
@@ -22,7 +23,6 @@ class RegistrationFormPage(BasePage):
     @property
     def last_name_field(self):
         return self.driver.find_element(*self.last_name_field_locator)
-
 
     @property
     def email_field(self):

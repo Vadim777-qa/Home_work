@@ -1,9 +1,11 @@
 import logging
-
 import pytest
 import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+
+from data import users
+from data.users import UserCreator, RegistrationTestsDataPath
 
 from pages.registration_facade import RegistrationFacade
 
@@ -25,6 +27,9 @@ def user_data():
 def logger():
     yield logging.getLogger()
 
+@pytest.fixture
+def registration_user():
+    yield users.UserCreator.registration_users(users.RegistrationTestsDataPath)[-3]
 
 @pytest.fixture
 def driver():
