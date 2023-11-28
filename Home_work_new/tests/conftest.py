@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.options import Options
 from data import users
 from data.users import UserCreator, RegistrationTestsDataPath
 
-from pages.registration_facade import RegistrationFacade
+from ..pages.registration_facade import RegistrationFacade
 
 
 def user_data():
